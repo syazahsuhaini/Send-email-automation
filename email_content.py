@@ -3,10 +3,11 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication  # for non text
 
 from email_addr import *
-#from email_text import *
 from data_path import *
 
-def message(month, year):
+def message(month, year, text_content):
+
+    error_flag = 'N'    # N - timesheet dir isnt empty, Y - timesheet dir is empty
 
     msg = MIMEMultipart()
 
@@ -14,10 +15,6 @@ def message(month, year):
     msg['Subject'] = f'TIMESHEET: SYAZA HAZWANI BINTI SUHAINI {month.upper()} {year}'  
     msg['From'] = from_addr
     msg['To'] = to_addr
-
-    text_content = (f'Dear Wilson/Kim/Rajesh,\n\n'
-        f'Below I attached all the timesheets for {month.capitalize()} {year}.\n\n'
-        f'Thank you.\n\nBest regards,\nSyaza\n019-3012070')
 
     # contents in the email
     # texts
@@ -35,6 +32,7 @@ def message(month, year):
 
     if count_files < 1:
         print('There is no files to send as attachments.')
+        error_flag = 'Y'
     else:
         for attachment_content in files:
             with open(attachment_content, 'rb') as f:
@@ -44,4 +42,4 @@ def message(month, year):
                 )
             msg.attach(file)
 
-    return msg
+    return msg, error_flag

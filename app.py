@@ -1,5 +1,6 @@
 import argparse
 
+from email_text import *
 from email_send import *
 
 if __name__ == "__main__":
@@ -24,4 +25,5 @@ if __name__ == "__main__":
             print("Error: you must provide month and year for renaming, e.g., 'January 2025'")
         else:
             month, year = args.month_year
-            send_process(month, year)
+            text_content = text_template(month, year)
+            send_process(month, year, text_content)
