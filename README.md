@@ -9,3 +9,4 @@ A small automation tool using Python that will send an email
 Video demonstration: TBA
 
 ## Future improvement
+- Apply it as a Telegram bot

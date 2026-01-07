@@ -12,3 +12,5 @@ __pycache__/
 /archieve
 
 data_path.py
+
+email_addr.py

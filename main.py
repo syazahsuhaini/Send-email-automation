@@ -1,7 +1,7 @@
 # importing requireed modules
 from email.mime.text import MIMEText
 #from email.mime.image import MIMEImage
-from email.mime.application import MIMEApplication
+from email.mime.application import MIMEApplication  # for non text
 from email.mime.multipart import MIMEMultipart
 import smtplib
 
@@ -25,12 +25,13 @@ def message(subject, text, attachment):
     # build message contents
     msg = MIMEMultipart()
 
-    # Add Subject
+    # Email headers (what recipient sees)
     msg['Subject'] = subject  
     msg['From'] = 'syazasuhaini@gmail.com'
     msg['To'] = "nuudii10@gmail.com"
 
 
+    # add the content you want to send
     # Add text contents
     msg.attach(MIMEText(text))  
 
