@@ -27,3 +27,6 @@ if __name__ == "__main__":
             month, year = args.month_year
             text_content = text_template(month, year)
             send_process(month, year, text_content)
+    
+    if not args.write:
+        print("No flags provided. Nothing will run.")
