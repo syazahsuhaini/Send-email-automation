@@ -14,7 +14,8 @@ def message(month, year, text_content):
     # email headers
     msg['Subject'] = f'TIMESHEET: SYAZA HAZWANI BINTI SUHAINI {month.upper()} {year}'  
     msg['From'] = from_addr
-    msg['To'] = to_addr
+    msg['To'] = ', '.join(to_addr)
+    msg['Cc'] = ', '.join(cc_addr)
 
     # contents in the email
     # texts
@@ -37,7 +38,9 @@ def message(month, year, text_content):
         for attachment_content in files:
             with open(attachment_content, 'rb') as f:
                 file = MIMEApplication(
+                    # returns file's content
                     f.read(),
+                    # returns file's name
                     name=attachment_content.name
                 )
             msg.attach(file)

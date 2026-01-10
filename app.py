@@ -10,11 +10,11 @@ if __name__ == "__main__":
         epilog='by Syaza')
     
     parser.add_argument('--write',   # -- indicate as flag
-                        action='store_true',    # if flag is in the argument, return TRUE for args.sort
+                        action='store_true',    # if flag is in the argument, return TRUE for args.write
                         help='Send email.')
     
     parser.add_argument('month_year',   # -- indicate as flag
-                        nargs='*',    # neeed 2 arguments
+                        nargs='*',    # need 2 arguments
                         default=None,
                         help='Month and year of the timesheets.')
     

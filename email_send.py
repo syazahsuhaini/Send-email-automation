@@ -16,9 +16,9 @@ def send_process(month, year, text_content):
         msg, error_flag = message(month, year, text_content)
 
         if error_flag == 'N':
-            # Provide some data to the sendmail function!
+            # Provide some data to the sendmail function
             smtp.sendmail(from_addr=from_addr,
-                        to_addrs=to_addr, msg=msg.as_string())
+                        to_addrs=to_addr+cc_addr, msg=msg.as_string())
             print('Email sent successfully!')
         else:
             print('Failed to send email due to lack of attachment.')
