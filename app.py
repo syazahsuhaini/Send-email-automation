@@ -1,3 +1,5 @@
+# cli interface
+
 import argparse
 
 from email_text import *

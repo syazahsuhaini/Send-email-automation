@@ -28,4 +28,4 @@ def send_process(month, year, text_content):
 
     smtp.quit() 
 
-    return
+    return error_flag
