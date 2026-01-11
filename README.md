@@ -52,3 +52,9 @@ Video demonstration: TBA
 ## Future improvement
 - ~~Apply it as a Telegram bot~~
 - Host the bot on a cloud server for 24/7 availability
+- Add config.json file to store sensitive/important information properly
+- Add scheduling by using Windows Task Scheduler or Python schedule library
+- Telegram bot upgrade:
+    /status → shows last sent email
+    /help → explains commands
+    /preview → shows email content before sending
